@@ -52,6 +52,7 @@ export class AppComponent{
           this.isError = true;
           this.statusMessage = "Profil nicht gefunden.";
           this.isLoading = false;
+          this.profile = undefined;
         }
       })
   }
