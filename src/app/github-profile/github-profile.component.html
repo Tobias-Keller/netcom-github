@@ -1,0 +1,43 @@
+<div class="profileHolder" *ngIf="profile">
+
+  <div class="profile">
+    <div class="header">
+      <img src="{{profile.avatar_url}}" alt="{{profile.name}}">
+      <div class="details">
+        <h3>Profildetails</h3>
+        <b>Name:</b> {{profile.name}}<br>
+        <b>Location:</b> {{profile.location}}<br>
+        <b>Firma:</b> {{profile.company}}
+      </div>
+    </div>
+    <div class="bio" *ngIf="profile.bio !== ''">
+      <h3>Biografie</h3>
+      <p>{{profile.bio}}</p>
+    </div>
+    <div class="stats">
+      <h3>Profil Statistiken</h3>
+      <ul>
+        <li><span>Öffentliche Repos</span> {{profile.public_repos}}</li>
+        <li><span>Öffentliche Gists</span> {{profile.public_gists}}</li>
+        <li><span>Follower</span> {{profile.followers}}</li>
+        <li><span>Following</span> {{profile.following}}</li>
+        <li><span>Account erstellt</span> {{profile.created_at | date: "dd.MM.yyyy"}}</li>
+      </ul>
+    </div>
+    <div class="repos">
+      <h3>Repositories</h3>
+      <div *ngIf="!repositories">Keine Repros gefunden</div>
+      <ul>
+        <li *ngFor="let repro of repositories">
+            <h4>{{repro.full_name}}</h4>
+            <small>Erstellt am: {{repro.created_at | date: "dd.MM.yyyy"}}</small><br>
+            <p>
+              <b>Beschreibung</b><br>
+              {{(repro.description !== null) ? repro.description : 'Keine Beschreibung vorhanden'}}
+            </p>
+          <a href="{{repro.html_url}}">Zum Repository wechseln</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

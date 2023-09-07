@@ -1,0 +1,5 @@
+<div  class="statusBar"
+      [ngClass]="isError ? 'error' : 'success'"
+      *ngIf="statusMessage !== ''">
+  {{statusMessage}}
+</div>

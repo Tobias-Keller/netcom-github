@@ -1,0 +1,9 @@
+<div class="searchContainer">
+  <h1>GitHub Profil suchen</h1>
+  <div class="search">
+    <input type="text" placeholder="GitHub Profilname" (keyup.enter)="startSearch()" [(ngModel)]="searchInput">
+    <button type="button" (click)="startSearch()">
+      <img src="assets/icons/search.svg" alt="Suchen">
+    </button>
+  </div>
+</div>
