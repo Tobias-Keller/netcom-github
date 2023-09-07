@@ -10,9 +10,9 @@
         <b>Firma:</b> {{profile.company}}
       </div>
     </div>
-    <div class="bio" *ngIf="profile.bio !== ''">
+    <div class="bio">
       <h3>Biografie</h3>
-      <p>{{profile.bio}}</p>
+      <p>{{(profile.bio !== '') ? profile.bio : 'Keine Biografie angegeben.'}}</p>
     </div>
     <div class="stats">
       <h3>Profil Statistiken</h3>
